@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-class Node
+class StackNode
 {
 public:
     int data;
-    Node *next;
+    StackNode *next;
 
-    Node(int value)
+    StackNode(int value)
     {
         data = value;
         next = nullptr;
@@ -17,7 +17,7 @@ public:
 class LinkedList
 {
 private:
-    Node *head;
+    StackNode *head;
 
 public:
     void insertAtEnd(int value);
@@ -28,14 +28,14 @@ public:
 
 void LinkedList::insertAtEnd(int value)
 {
-    Node *newNode = new Node(value);
+    StackNode *newNode = new StackNode(value);
     if (head == nullptr)
     {
         head = newNode;
         return;
     }
 
-    Node *temp = head;
+    StackNode *temp = head;
     while (temp->next != nullptr)
     {
         temp = temp->next;
